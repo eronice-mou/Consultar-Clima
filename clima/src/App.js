@@ -5,7 +5,7 @@ import './style.css';
 function App() {
 
   const [input, setInput] = useState("")  //entrada do usuário
-  const [weatherForecast, setWeatherForecast] = useState({})  //Previsão do tempo
+  const [weatherForecast, setWeatherForecast] = useState(null);  //Previsão do tempo
 
   const handleSearch = (e) => { //Pega o valor do input
     setInput(e.target.value)
@@ -44,16 +44,40 @@ function App() {
 
       </div>
 
+      {/*
       <main className='main'>
         <span>Lugar: {weatherForecast.location.name}</span>
         <span>País: {weatherForecast.location.country}</span>
         <span>Região: {weatherForecast.location.region}</span>
         <span>Clima: {weatherForecast.current.weather_descriptions}</span>
         <span>Temperatura: {weatherForecast.current.temperature}º</span>
-        <spam> <img src={weatherForecast.current.weather_icons}></img></spam>
-        
 
       </main>
+      */}
+
+      {
+          weatherForecast ? (
+
+            <div>
+              <div className="mt-4">
+
+                <main className='main'>
+                  <span>Lugar: {weatherForecast.location.name}</span>
+                  <span>País: {weatherForecast.location.country}</span>
+                  <span>Região: {weatherForecast.location.region}</span>
+                  <span>Clima: {weatherForecast.current.weather_descriptions}</span>
+                  <span>Temperatura: {weatherForecast.current.temperature}º</span>
+
+                </main>
+
+                <div className='imagem-clima'>
+                  <img src={weatherForecast.current.weather_icons}></img>
+                </div>
+
+              </div>
+            </div>
+          ) : null
+        }
     </div>
 
   );
