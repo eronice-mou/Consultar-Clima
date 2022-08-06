@@ -44,17 +44,6 @@ function App() {
 
       </div>
 
-      {/*
-      <main className='main'>
-        <span>Lugar: {weatherForecast.location.name}</span>
-        <span>País: {weatherForecast.location.country}</span>
-        <span>Região: {weatherForecast.location.region}</span>
-        <span>Clima: {weatherForecast.current.weather_descriptions}</span>
-        <span>Temperatura: {weatherForecast.current.temperature}º</span>
-
-      </main>
-      */}
-
       {
           weatherForecast ? (
 
